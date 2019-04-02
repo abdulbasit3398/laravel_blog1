@@ -38,9 +38,3 @@
 @section('footer')
   <script src="{{asset('user/js/prism.js')}}"></script>
 @endsection
-
-
-
-
-
-
