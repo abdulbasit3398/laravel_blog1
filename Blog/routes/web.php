@@ -20,6 +20,9 @@ Route::group(['namespace' => 'Admin'],function(){
 	//Users Routes
 	Route::resource('admin/user','UserController');
 
+	//Roles Routes
+	Route::resource('admin/role','RoleController');
+
 	//Post Routes
 	Route::resource('admin/post','PostController');
 
@@ -28,6 +31,11 @@ Route::group(['namespace' => 'Admin'],function(){
 
 	//Category routes
 	Route::resource('admin/category','CategoryController');
+
+	//Admin Auth routes
+	Route::get('admin-login', 'Auth\LoginController@showLoginForm')->name('admin.login');
+	Route::post('admin-login','Auth\LoginController@login');
+	Route::post('admin.logout', 'Auth\LoginController@logout')->name('admin.logout');
 });
 
 

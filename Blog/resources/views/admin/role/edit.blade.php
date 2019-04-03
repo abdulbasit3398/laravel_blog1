@@ -22,44 +22,28 @@
         <div class="col-md-12">
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">Add User</h3>
+              <h3 class="box-title">Tag</h3>
             </div>
             @include('includes.messages')
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form" method="post" action="{{ route('user.store')}}"> 
+            <form role="form" method="post" action="{{route ('tag.update',$tag->id)}}"> 
               @csrf
+              {{ method_field('PUT') }}
               <div class="box-body">
                 <div class=" col-lg-offset-3 col-lg-6">
 
                   <div class="form-group">
-                  <label for="name">User Name</label>
-                  <input type="text" class="form-control" name="name" id="name" placeholder="Enter User Name">
+                  <label for="name">Tag Title</label>
+                  <input type="text" class="form-control" name="name" id="name" value="{{$tag->name}}">
                 </div> 
                 <div class="form-group">
-                  <label for="email">Email</label>
-                  <input type="text" class="form-control" name="email" id="email" placeholder="Enter User Email">
-                </div>
-                <div class="form-group">
-                  <label for="password">Password</label>
-                  <input type="text" class="form-control" name="password" id="password" placeholder="Enter Password">
-                </div>
-                <div class="form-group">
-                  <label for="conf_password">Confirm Password</label>
-                  <input type="text" class="form-control" name="conf_password" id="conf_password" placeholder="Confirm Password">
-                </div>
-                <div class="form-group">
-                  <label for="role">Assign Role</label>
-                  <select class="form-control" name="role">
-                    <option value="">Select Role</option>
-                    <option value="">Editor</option>
-                    <option value="">Publisher</option>
-                    <option value="">Writer</option>
-                  </select>
+                  <label for="slug">Tag Slug</label>
+                  <input type="text" class="form-control" name="slug" id="slug" value="{{$tag->slug}}">
                 </div>
                 <div class="form-group">
                 <button type="submit" class="btn btn-primary">Submit</button>
-                <a href="{{route ('user.index')}}" class="btn btn-danger">Cancel</a>
+                <a href="{{route ('tag.index')}}" class="btn btn-danger">Cancel</a>
               </div>
                 </div> 
               <!-- /. tools -->
