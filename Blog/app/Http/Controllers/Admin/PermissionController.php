@@ -2,22 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Model\admin\Permission;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use App\Model\admin\admin;
-use App\Model\admin\role;
 
-class UserController extends Controller
+class PermissionController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth:admin');
-    }
     /**
      * Display a listing of the resource.
      *
@@ -25,8 +14,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = admin::all();
-        return view('admin.user.show',compact('users'));
+        //
     }
 
     /**
@@ -36,8 +24,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        $roles = role::all();
-        return view('admin.user.create',compact('roles'));
+        //
     }
 
     /**
@@ -54,10 +41,10 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Model\admin\Permission  $permission
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Permission $permission)
     {
         //
     }
@@ -65,10 +52,10 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Model\admin\Permission  $permission
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Permission $permission)
     {
         //
     }
@@ -77,10 +64,10 @@ class UserController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Model\admin\Permission  $permission
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Permission $permission)
     {
         //
     }
@@ -88,10 +75,10 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Model\admin\Permission  $permission
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Permission $permission)
     {
         //
     }

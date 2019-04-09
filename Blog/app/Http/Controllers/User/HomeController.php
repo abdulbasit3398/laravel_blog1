@@ -15,7 +15,8 @@ class HomeController extends Controller
     	$posts = post::where('status',1)->paginate(2);
     	return view('user/blog',compact('posts'));
     }
-    public function tag(tag $tag){
+    public function tag(tag $tag)
+    {
     	$posts = $tag->posts();
     	return view('user/blog',compact('posts'));
     }

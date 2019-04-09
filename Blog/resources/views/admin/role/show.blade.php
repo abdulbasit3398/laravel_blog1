@@ -75,9 +75,9 @@
                 <tr>
                   <td>{{ $loop->index + 1}}</td>
                   <td>{{ $role->name }}</td> 
-                  <td><a href="{{route ('tag.edit',$role->id)}}"><span class="glyphicon glyphicon-edit"></span></a></td>
+                  <td><a href="{{route ('role.edit',$role->id)}}"><span class="glyphicon glyphicon-edit"></span></a></td>
                   <td>
-                    <form id="delete-form-{{ $role->id }}" method="post" style="display: none;" action="{{route ('tag.destroy',$role->id)}}">
+                    <form id="delete-form-{{ $role->id }}" method="post" style="display: none;" action="{{route ('role.destroy',$role->id)}}">
                       @csrf
                       {{ method_field('DELETE') }}
                     </form>
